@@ -11,7 +11,7 @@ def power_numbers(*numbers):
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
-    return [number ** 2 for number in numbers]
+    return [el ** 2 for el in numbers]
 
 
 # filter types
@@ -19,6 +19,17 @@ ODD = "odd"
 EVEN = "even"
 PRIME = "prime"
 
+
+def is_prime(n):
+    """
+    функция возвращает True если число простое
+    """
+    if n == 2 or n == 3: return True
+    if n < 2 or n % 2 == 0 or n % 3 == 0: return False
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
 
 def filter_numbers():
     """
@@ -31,3 +42,20 @@ def filter_numbers():
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
+
+
+    def filter_func(n):
+        return (filter_type == ODD and n % 2 == 1) or \
+               (filter_type == EVEN and n % 2 == 0) or \
+               (filter_type == PRIME and is_prime(n))
+
+    # filter solution
+    filter_solution = list(
+        filter(
+            lambda n: filter_func(n),
+            numbers,
+    ))
+    # list comprehension solution
+    list_comp_result = [n for n in numbers if filter_func(n)]
+    assert list_comp_result == filter_solution
+    return filter_solution
