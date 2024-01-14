@@ -22,14 +22,17 @@ PRIME = "prime"
 
 def is_prime(n):
     """
-    функция возвращает True если число простое
+    function returns True if number is prime
     """
-    if n == 2 or n == 3: return True
-    if n < 2 or n % 2 == 0 or n % 3 == 0: return False
+    if n == 2 or n == 3:
+        return True
+    if n < 2 or n % 2 == 0 or n % 3 == 0:
+        return False
     for i in range(3, int(n ** 0.5) + 1, 2):
         if n % i == 0:
             return False
     return True
+
 
 def filter_numbers():
     """
@@ -43,7 +46,6 @@ def filter_numbers():
     <<< [2, 4]
     """
 
-
     def filter_func(n):
         return (filter_type == ODD and n % 2 == 1) or \
                (filter_type == EVEN and n % 2 == 0) or \
@@ -54,7 +56,7 @@ def filter_numbers():
         filter(
             lambda n: filter_func(n),
             numbers,
-    ))
+        ))
     # list comprehension solution
     list_comp_result = [n for n in numbers if filter_func(n)]
     assert list_comp_result == filter_solution
