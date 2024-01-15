@@ -45,8 +45,8 @@ def filter_numbers(numbers_list, type):
     <<< [2, 4]
     """
     if type == ODD:
-        return [el for el in numbers_list if number % 2 != 0]
+        return [el for el in numbers_list if el % 2 != 0]
     if type == EVEN:
-        return [el for el in numbers_list if number % 2 == 0]
+        return [el for el in numbers_list if el % 2 == 0]
     if type == PRIME:
-        return [el for el in numbers_list if is_prime(number)]
+        return [el for el in numbers_list if is_prime(el)]
