@@ -33,6 +33,7 @@ def is_prime(n):
             return False
     return True
 
+
 def filter_numbers(numbers_list, type):
     """
     функция, которая на вход принимает список из целых чисел,
