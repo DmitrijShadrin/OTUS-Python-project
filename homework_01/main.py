@@ -33,31 +33,5 @@ def is_prime(n):
             return False
     return True
 
-
-def filter_numbers():
-    """
-    функция, которая на вход принимает список из целых чисел,
-    и возвращает только чётные/нечётные/простые числа
-    (выбор производится передачей дополнительного аргумента)
-
-    >>> filter_numbers([1, 2, 3], ODD)
-    <<< [1, 3]
-    >>> filter_numbers([2, 3, 4, 5], EVEN)
-    <<< [2, 4]
-    """
-
-    def filter_func(n):
-        return (filter_type == ODD and n % 2 == 1) or \
-               (filter_type == EVEN and n % 2 == 0) or \
-               (filter_type == PRIME and is_prime(n))
-
-    # filter solution
-    filter_solution = list(
-        filter(
-            lambda n: filter_func(n),
-            numbers,
-        ))
-    # list comprehension solution
-    list_comp_result = [n for n in numbers if filter_func(n)]
-    assert list_comp_result == filter_solution
-    return filter_solution
+print("is num")
+print(power_numbers(6))
