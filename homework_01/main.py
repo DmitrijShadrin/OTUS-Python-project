@@ -33,5 +33,20 @@ def is_prime(n):
             return False
     return True
 
-print("is num")
-print(power_numbers(6))
+def filter_numbers(numbers_list, type):
+    """
+    функция, которая на вход принимает список из целых чисел,
+    и возвращает только чётные/нечётные/простые числа
+    (выбор производится передачей дополнительного аргумента)
+
+    >>> filter_numbers([1, 2, 3], ODD)
+    <<< [1, 3]
+    >>> filter_numbers([2, 3, 4, 5], EVEN)
+    <<< [2, 4]
+    """
+    if type == ODD:
+        return [el for el in numbers_list if number % 2 != 0]
+    if type == EVEN:
+        return [el for el in numbers_list if number % 2 == 0]
+    if type == PRIME:
+        return [el for el in numbers_list if is_prime(number)]
