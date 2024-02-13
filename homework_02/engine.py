@@ -1,15 +1,9 @@
 """
-Объявите следующие исключения:
-- LowFuelError
-- NotEnoughFuel
-- CargoOverload
+create dataclass `Engine`
 """
+from dataclasses import dataclass
 
-class LowFuelError(Exception):
-    pass
-
-class NotEnoughFuel(Exception):
-    pass
-
-class CargoOverload(Exception):
-    pass
+@dataclass()
+class Engine:
+    volume: None
+    pistons: None
